@@ -72,12 +72,12 @@ function setup() {
   ground2.visible = false;
 
   //sprite game over
-  gameOver = createSprite(300, 80);
+  gameOver = createSprite(width /2 , 80);
   gameOver.addImage(gameOverImg);
   gameOver.scale = 0.8;
 
   //sprite restart
-  restart = createSprite(300, 130);
+  restart = createSprite(width /2 , 130);
   restart.addImage(restartImg);
   restart.scale = 0.5;
 
@@ -146,7 +146,7 @@ function draw() {
   //texto da pontuação
   stroke(100);
   fill(120);
-  text('Score: ' + score, 500, 40);
+  text('Score: ' + score, width -100, 40);
 }
 function gravity() {
   Trex.velocityY += 0.5;
@@ -156,7 +156,7 @@ function criarNuvens() {
   //frameCount para "atrasar" a criação das sprites de nuvens
   // % (módulo) = resto de uma divisão
   if (frameCount % 60 === 0) {
-    var cloud = createSprite(610, 40, 40, 10);
+    var cloud = createSprite(width, 40, 40, 10);
     cloud.addImage(cloudImg);
     cloud.scale = 0.8;
     //round: arredonda para o número mais próximo
@@ -177,7 +177,7 @@ function criarNuvens() {
 
 function criarObstaculos() {
   if (frameCount % 60 === 0) {
-    var obstacle = createSprite(610, 160, 10, 40);
+    var obstacle = createSprite(width, 160, 10, 40);
 
     obstacle.scale = 0.7;
 
